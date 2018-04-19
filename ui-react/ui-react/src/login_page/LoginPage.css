@@ -1,0 +1,12 @@
+.LoginPage{
+    width: 300px;
+}
+.wrapp_login{
+    position: relative
+}
+.wrapp_login .LoginPage{
+    margin: 0;
+    position: absolute;               /* 2 */
+    top: 50%;                         /* 3 */
+    transform: translate(220%, 100%)
+}

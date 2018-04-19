@@ -1,0 +1,46 @@
+.style2 {
+    position:relative;
+    width:250px;
+}
+.style2 button{
+    position:absolute!important;
+    bottom:0px;
+    width:100%;
+    left:0;
+}
+.style2 .info_block{
+    background: red;
+    position: absolute;
+    width:250px;
+    height: 150px;
+    margin:0;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%)
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    width: 50%;
+}
+
+.sidebar {
+    background: #f00;
+    color: #fff;
+    width: 40%;
+}
+
+.circle
+{
+    width:100px;
+    height:100px;
+    border-radius:50px;
+    font-size:50px;
+    color:#fff;
+    line-height:100px;
+    text-align:center;
+    background:#000
+}
