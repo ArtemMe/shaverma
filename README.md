@@ -1,87 +1,74 @@
-# Project Title
+# Shava-shop
 
-One Paragraph of project description goes here
-
+This is project was creating to study technology such as spring-boot, react, redux, jwt tokens, microservice architecture.
+Short structure on this moment:
+  * Access-server
+  * Resource-server
+  * Ui - on react 
+ 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### Access-server
 
-### Prerequisites
-
-What things you need to install the software and how to install them
+After starting springBoot you can test it. POST request:
 
 ```
-Give examples
+http://localhost:8087/spring-security-oauth-server/oauth/token?username=john&password=123&grant_type=password&client_id=fooClientIdPassword
 ```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+With header:
 ```
-Give the example
+Content-Type:application/x-www-form-urlencoded
+Authorization: Basic Zm9vQ2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=
 ```
+This ```Zm9vQ2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=``` is ```fooClientIdPassword:secret``` string in ACSII base-64 encoding
 
-And repeat
-
+After all you should get json like:
 ```
-until finished
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJqb2huIiwic2NvcGUiOlsiZm9vIiwicmVhZCIsIndyaXRlIl0sIm9yZ2FuaXphdGlvbiI6ImpvaG5YZVB3IiwiZXhwIjoxNTI0MTY3MTU2LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiMzg3YTUxZGYtMmNlYy00MGVjLTg3YjUtMDJkZjg5YTY3NGM4IiwiY2xpZW50X2lkIjoiZm9vQ2xpZW50SWRQYXNzd29yZCJ9.UKc2MXz9Y83rKiJRqo1mzdGjWlUkqJvwTNFVLWLtca0",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJqb2huIiwic2NvcGUiOlsiZm9vIiwicmVhZCIsIndyaXRlIl0sIm9yZ2FuaXphdGlvbiI6ImpvaG5YZVB3IiwiYXRpIjoiMzg3YTUxZGYtMmNlYy00MGVjLTg3YjUtMDJkZjg5YTY3NGM4IiwiZXhwIjoxNTI2NzU1NTU2LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiYmEyNmQ3YTktODIyMC00YTk2LWExZDItZmZlYjYyYTczZjY4IiwiY2xpZW50X2lkIjoiZm9vQ2xpZW50SWRQYXNzd29yZCJ9.B-CZBdfXIDOElmcimMpWPdajvuSdyEZ1mRzp4egvJmg",
+    "expires_in": 3599,
+    "scope": "foo read write",
+    "organization": "johnXePw",
+    "jti": "387a51df-2cec-40ec-87b5-02df89a674c8"
+}
 ```
+### Resource-server
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+After starting springBoot you can test it. Send GET request:
 ```
-Give an example
+http://localhost:8082/spring-security-oauth-resource/list_shaverm
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
+with header:
 ```
-Give an example
+Content-Type:application/x-www-form-urlencoded
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJqb2huIiwic2NvcGUiOlsiZm9vIiwicmVhZCIsIndyaXRlIl0sIm9yZ2FuaXphdGlvbiI6ImpvaG5YZVB3IiwiZXhwIjoxNTI0MTY3MTU2LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiMzg3YTUxZGYtMmNlYy00MGVjLTg3YjUtMDJkZjg5YTY3NGM4IiwiY2xpZW50X2lkIjoiZm9vQ2xpZW50SWRQYXNzd29yZCJ9.UKc2MXz9Y83rKiJRqo1mzdGjWlUkqJvwTNFVLWLtca0
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
+We inserted acccess_token from the previous json in Authorization header.
+You should get something like this:
+```
+[
+    {
+        "id": 1,
+        "img": "images/grid-list/00-52-29-429_640.jpg",
+        "title": "острая",
+        "comment": "Сочное кошачье мясо, свежие помидоры.....",
+        "cost": 100
+    },
+    {
+        "id": 2,
+        "img": "images/grid-list/00-52-29-429_640.jpg",
+        "title": "КАВКАЗКАЯ",
+        "comment": "Сочное кошачье мясо, свежие помидоры.....",
+        "cost": 150
+    }
+]
+```
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Artem Mezhelovsky**
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
 * etc
