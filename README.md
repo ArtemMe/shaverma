@@ -69,6 +69,12 @@ You should get something like this:
 
 * **Artem Mezhelovsky**
 
+##Resources
+
+* [baeldung.com](http://www.baeldung.com/spring-security-authentication-provider) - Auth server example
+* [habrahabr.ru](https://habrahabr.ru/post/280786/) - Microservice architecture
+* [https://jwt.io/](https://jwt.io/) -JWT
+
 ## Acknowledgments
 
 * etc
