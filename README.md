@@ -22,7 +22,7 @@ Authorization: Basic Zm9vQ2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=
 ```
 This ```Zm9vQ2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=``` is ```fooClientIdPassword:secret``` string in ACSII base-64 encoding
 
-After all you should get json like:
+After all you will get json like:
 ```
 {
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJqb2huIiwic2NvcGUiOlsiZm9vIiwicmVhZCIsIndyaXRlIl0sIm9yZ2FuaXphdGlvbiI6ImpvaG5YZVB3IiwiZXhwIjoxNTI0MTY3MTU2LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiMzg3YTUxZGYtMmNlYy00MGVjLTg3YjUtMDJkZjg5YTY3NGM4IiwiY2xpZW50X2lkIjoiZm9vQ2xpZW50SWRQYXNzd29yZCJ9.UKc2MXz9Y83rKiJRqo1mzdGjWlUkqJvwTNFVLWLtca0",
