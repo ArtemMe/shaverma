@@ -9,7 +9,7 @@ Short structure on this moment:
 ## Getting Started
 ### UI
 
-Go to ```/shop_sh``` and enter```npm start``` in console
+Open project ui-react in console, go to ```/shop_sh``` and enter```npm start```
 
 ### Access-server
 
