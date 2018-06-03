@@ -7,6 +7,9 @@ Short structure on this moment:
   * Ui - on react 
  
 ## Getting Started
+### UI
+
+Go to ```/shop_sh``` and enter```npm start``` in console
 
 ### Access-server
 
