@@ -2,7 +2,7 @@ package com.example.demoresource.web.controller;
 
 import com.example.demoresource.web.dto.Foo;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

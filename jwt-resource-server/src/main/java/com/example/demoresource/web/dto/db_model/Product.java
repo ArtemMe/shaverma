@@ -26,6 +26,14 @@ public class Product {
         this.cost = cost;
     }
 
+    public Product(long id, String img, String title, String comment, float cost) {
+        this.id = id;
+        this.img = img;
+        this.title = title;
+        this.comment = comment;
+        this.cost = cost;
+    }
+
     public Product() {
     }
 
